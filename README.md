@@ -109,7 +109,7 @@ Example:
 ```
 import os
 import sys
-sys.path.insert(0, os.path.abspath('.'))
+sys.path.insert(0, os.path.abspath('./python/'))
 ```
 
 Optional, but recommended: Change the default Sphinx theme to something that is more presentable, like the "Read the docs theme":
