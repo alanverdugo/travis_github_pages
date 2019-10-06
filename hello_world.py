@@ -1,4 +1,6 @@
 #!/usr/bin/python
+"""Sample program."""
 
-print("Hello, world!")
-
+def hello_world():
+    """Print a message to stdout."""
+    print("Hello, world!")
