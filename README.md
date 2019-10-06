@@ -131,3 +131,8 @@ html_theme = 'sphinx_rtd_theme'
 
 
 ### Add a GitHub token to the Travis environment variables.
+
+For public repositories, only the `public_repo` scope is needed.
+
+
+For private repositories, add the entire `repo` scope.
