@@ -124,9 +124,10 @@ html_theme = 'sphinx_rtd_theme'
 
 ### Add a .travis.yml file in the repository root directory.
 
+Refer to .travis.yml in this same repository as an example.
+
 
 ### Add the repository to Travis.
-
 
 
 
