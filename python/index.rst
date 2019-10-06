@@ -9,7 +9,7 @@ Welcome to GitHub pages demo's documentation!
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
-
+   code
 
 
 Indices and tables
