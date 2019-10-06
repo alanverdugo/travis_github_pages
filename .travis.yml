@@ -1,0 +1,48 @@
+language: python
+python:
+  - "3.7"
+
+stages:
+  - linting
+  - cyclomatic complexity
+  - security
+  - deploy
+jobs:
+  include:
+    - stage: linting
+      name: "PEP-8 compliance checking"
+      script:
+          - pip install pylint
+          - pylint python/hello_world.py
+          - pip install pydocstyle
+          - pydocstyle python/hello_world.py
+    - stage: cyclomatic complexity
+      name: "Cyclomatic complexity checking"
+      script:
+          - pip install xenon
+          - xenon python/hello_world.py
+    - stage: security
+      name: "Security vulnerabilities checking"
+      script:
+          - pip install bandit
+          - bandit python/hello_world.py
+    - stage: deploy
+      name: "Deploy to GitHub Pages"
+      script:
+          - pip install sphinx
+          - pip install sphinx_autodoc_typehints
+          - pip install sphinx_rtd_theme
+          - sphinx-build ./python/ . -b html -v
+      #if: (NOT type IN (pull_request)) AND (branch = master) # only deploy if merging on master
+      deploy:
+          provider: pages # deploy on github pages
+          target_branch: gh-pages
+          verbose: true
+          skip_cleanup: true
+          keep_history: true
+          github_token: $travis_ghpages_token # defined via the Travis interface
+          github_url: github.com
+          #local_dir: ./_build_html
+          on:
+              all_branches: true
+
