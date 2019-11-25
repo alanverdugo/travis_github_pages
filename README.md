@@ -18,8 +18,15 @@ git push --set-upstream origin gh-pages
 
 ### Activate GitHub pages in the repository settings.
 
+In the repository settings, go to the "GitHub Pages" section and select "gh-pages branch" as the source.
 
-### In the development branch, run the Sphinx-quickstart.
+<p align="center">
+    <img src="gh_pages.png"><br>
+</p>
+
+### Execute Sphinx-quickstart.
+
+Switch to any other branch that is not "gh-pages" (e.g. the development branch) and execute the following, changing the values accordingly.
 
 ```
 sphinx-quickstart --author "Alan Verdugo" \
