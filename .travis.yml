@@ -29,6 +29,7 @@ jobs:
     - stage: deploy
       name: "Deploy to GitHub Pages"
       script:
+          - export PYTHONPATH=$(pwd)/tests:$(pwd)/python
           - pip install sphinx
           - pip install sphinx_autodoc_typehints
           - pip install sphinx_rtd_theme
@@ -40,7 +41,7 @@ jobs:
           verbose: true
           skip_cleanup: true
           keep_history: true
-          github_token: $travis_ghpages_token # defined via the Travis interface
+          github_token: $token # defined via the Travis interface
           github_url: github.com
           #local_dir: ./_build_html
           on:
