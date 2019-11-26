@@ -50,21 +50,21 @@ Selected root path: .
 You have two options for placing the build directory for Sphinx output.
 Either, you use a directory "_build" within the root path, or you separate
 "source" and "build" directories within the root path.
-> Separate source and build directories (y/n) [n]: n
+> Separate source and build directories (y/n) [n]: y
 
-Creating file ./conf.py.
-Creating file ./index.rst.
+Creating file ./source/conf.py.
+Creating file ./source/index.rst.
 Creating file ./make.bat.
 
 Finished: An initial directory structure has been created.
 
-You should now populate your master file ./index.rst and create other documentation
+You should now populate your master file ./source/index.rst and create other documentation
 source files. Use the Makefile to build the docs, like so:
    make builder
 where "builder" is one of the supported builders, e.g. html, latex or linkcheck.
 ```
 
-### Modify the index.rst file.
+### Modify the source/index.rst file.
 
 Add lines according to the sections that you may want to include.
 
@@ -96,7 +96,7 @@ Since we added a "code" section, we need to add a `code.rst` file.
 
 In this file, add the names of the .py files that have your code.
 
-In this example, we are asking Sphinx to auto generate documentation for `hello_world.py`:
+In this example, we are asking Sphinx to auto generate documentation for `hello_world.py` (note that there is no extension in the file name:
 ```
 Auto Generated Documentation
 ============================
@@ -106,7 +106,7 @@ Auto Generated Documentation
 ```
 
 
-### Modify the conf.py file.
+### Modify the source/conf.py file.
 
 Uncomment the lines that import the os and sys modules.
 
@@ -140,10 +140,25 @@ Refer to .travis.yml in this same repository as an example.
 
 ### Add a GitHub token to the Travis environment variables.
 
+On Travis, select the repository that you just activated and select "More options" and then "Settings".
+
+<p align="center">
+    <img src="token01.png"><br>
+</p>
+
+In the "Environment Variables" section, add the GitHub token with the name that was specified in the .travis.yml file. In this case, its name is `github_token`.
+
+<p align="center">
+    <img src="token02.png"><br>
+</p>
+
 For public repositories, only the `public_repo` scope is needed.
 
-
 For private repositories, add the entire `repo` scope.
+
+<p align="center">
+    <img src="token.png"><br>
+</p>
 
 ### Commit, push and test the build.
 
@@ -151,4 +166,6 @@ At this point, Travis should be able to start the build whenever a new push is d
 
 Once the build finishes successfully, the documentation should be published in a URL similar to this:
 
+```
 https://pages.github.com/<ORG>/<REPOSITORY>
+```
