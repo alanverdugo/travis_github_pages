@@ -106,7 +106,7 @@ Auto Generated Documentation
 ```
 
 
-### Modify the conf.rst file.
+### Modify the conf.py file.
 
 Uncomment the lines that import the os and sys modules.
 
@@ -144,3 +144,11 @@ For public repositories, only the `public_repo` scope is needed.
 
 
 For private repositories, add the entire `repo` scope.
+
+### Commit, push and test the build.
+
+At this point, Travis should be able to start the build whenever a new push is done. Check the output of the build and look for any errors.
+
+Once the build finishes successfully, the documentation should be published in a URL similar to this:
+
+https://pages.github.com/<ORG>/<REPOSITORY>
