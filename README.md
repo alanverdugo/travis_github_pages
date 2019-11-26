@@ -146,7 +146,7 @@ On Travis, select the repository that you just activated and select "More option
     <img src="token01.png"><br>
 </p>
 
-In the "Environment Variables" section, add the GitHub token with the name that was specified in the .travis.yml file. In this case, its name is `github_token`.
+In the "Environment Variables" section, add the GitHub token with the name that was specified in the .travis.yml file. In this case, its name is `token`.
 
 <p align="center">
     <img src="token02.png"><br>
