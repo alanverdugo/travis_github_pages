@@ -41,7 +41,7 @@ jobs:
           verbose: true
           skip_cleanup: true
           keep_history: true
-          github_token: $token # defined via the Travis interface
+          github_token: $travis_ghpages_token # defined via the Travis interface
           github_url: github.com
           #local_dir: ./_build_html
           on:
