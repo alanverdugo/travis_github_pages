@@ -26,6 +26,12 @@ In the repository settings, go to the "GitHub Pages" section and select "gh-page
     <img src="gh_pages.png"><br>
 </p>
 
+### Install Sphinx.
+
+```
+pip3 install sphinx --user
+```
+
 ### Execute Sphinx-quickstart.
 
 Switch to any other branch that is not "gh-pages" (e.g. the development branch) and execute the following, changing the values accordingly.
