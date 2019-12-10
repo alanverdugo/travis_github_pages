@@ -1,4 +1,6 @@
-# travis_github_pages
+# Configuring Sphinx, GitHub pages and Travis to auto-publish code documentation.
+
+The following are instructions to configure Sphinx, GitHub pages and Travis in order to auto-publish code documentation. This setup only is a one-time process and it can be completed in about 10 minutes.
 
 ### Create an orphan branch named gh-pages.
 
@@ -23,6 +25,12 @@ In the repository settings, go to the "GitHub Pages" section and select "gh-page
 <p align="center">
     <img src="gh_pages.png"><br>
 </p>
+
+### Install Sphinx.
+
+```
+pip3 install sphinx --user
+```
 
 ### Execute Sphinx-quickstart.
 
@@ -96,7 +104,7 @@ Since we added a "code" section, we need to add a `code.rst` file.
 
 In this file, add the names of the .py files that have your code.
 
-In this example, we are asking Sphinx to auto generate documentation for `hello_world.py` (note that there is no extension in the file name:
+In this example, we are asking Sphinx to auto-generate documentation for `hello_world.py` (note that there is no extension in the file name):
 ```
 Auto Generated Documentation
 ============================
@@ -136,6 +144,23 @@ Refer to .travis.yml in this same repository as an example.
 
 ### Add the repository to Travis.
 
+The instructions for this are pretty straightforward. Go to Travis and click on the + sign to add the repository.
+
+<p align="center">
+    <img src="repo01.png"><br>
+</p>
+
+Click on the "Sync account" button if the repository still does not appear in the list.
+
+<p align="center">
+    <img src="repo02.png"><br>
+</p>
+
+Once the repository appears, click on the button at the left of its name.
+
+<p align="center">
+    <img src="repo03.png"><br>
+</p>
 
 
 ### Add a GitHub token to the Travis environment variables.

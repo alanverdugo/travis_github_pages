@@ -29,6 +29,7 @@ jobs:
     - stage: deploy
       name: "Deploy to GitHub Pages"
       script:
+          - export PYTHONPATH=$(pwd)/tests:$(pwd)/python
           - pip install sphinx
           - pip install sphinx_autodoc_typehints
           - pip install sphinx_rtd_theme
